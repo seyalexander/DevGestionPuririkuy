@@ -1,0 +1,29 @@
+<article>
+  @if (showRegistro) {
+    <div class="modal-registro">
+      <app-forms
+        (cerrarComponenteEvent)="mostrarComponente()"
+      />
+    </div>
+  }
+
+  <header>
+    <app-header-pages
+      (callBackData)="recibirData($event)"
+      (cerrarComponenteEvent)="mostrarComponente()"
+      [nombrePagina]="nombrePagina"
+    />
+  </header>
+
+  <main>
+    <div class="bg-container-body">
+      <div class="container-body">
+        <app-tabla-datos-nosotros
+          [nombrePagina]="nombrePagina"
+          [dataNosotros]="dataNosotrosLista"
+          [isLoading]="isLoading"
+        />
+      </div>
+    </div>
+  </main>
+</article>

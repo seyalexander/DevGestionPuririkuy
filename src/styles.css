@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  scrollbar-width: 24px;
+  scrollbar-color:rgb(56,80,90) rgba(194, 194, 194, 0.9) ;
+  scroll-snap-type: proximity;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(243, 243, 243);
+  scroll-behavior: smooth;
+  /* scrollbar-width: thin;
+  scrollbar-color: rgb(56,80,90) rgb(67,183,162); */
+}
+

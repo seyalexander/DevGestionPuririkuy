@@ -1,0 +1,36 @@
+<main class="sidebar">
+  <div class="filter"></div>
+  <div class="container-datos">
+    <div class="logo-empresa">
+      <div class="bg-imagen">
+        <img src="" alt="" />
+      </div>
+      <span>PURIRIKUI</span>
+    </div>
+    <ul>
+      @for (item of mainMenu.defaultOptions; track $index) {
+      <li>
+        <app-button-text-icon-sidebar
+          (click)="abrirComponente()"
+          [mode]="'aside'"
+          [iconLeftButton]="'uil-play'"
+          [textButton]="item.name"
+          [routerLink]="item.route"
+        />
+      </li>
+      }
+
+      <li>
+        @for (item of mainMenu.accessLink; track $index) {
+        <app-button-text-icon-sidebar
+          (click)="abrirComponente()"
+          [mode]="'aside'"
+          [iconLeftButton]="'uil-play'"
+          [textButton]="item.name"
+          [routerLink]="item.route"
+        />
+        }
+      </li>
+    </ul>
+  </div>
+</main>

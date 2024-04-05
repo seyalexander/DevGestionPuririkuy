@@ -1,0 +1,53 @@
+<table class="table table-striped table-inverse table-responsive">
+  <thead class="thead-inverse">
+    <tr>
+      <th>
+        <app-th-table-icon-text-principal [nombreTh]="'N°'" />
+      </th>
+      <th>
+        <app-th-table-icon-text-principal [nombreTh]="'Titulo'" />
+      </th>
+      <th>
+        <app-th-table-icon-text-principal [nombreTh]="'Descripción'" />
+      </th>
+      <th>
+        <app-th-table-icon-text-principal [nombreTh]="'Lugares'" />
+      </th>
+      <th>Editar</th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+
+  @if (!isLoading) {
+  <tbody>
+    @for (item of dataPaquetes; track $index) {
+    <tr>
+      <td scope="row">id</td>
+      <td>titulo</td>
+      <td>descripción</td>
+      <td>Lugares</td>
+      <td>
+        <button class="btn-option-table btn-editar">
+          <i class="uil uil-pen"></i>
+        </button>
+      </td>
+      <td>
+        <button class="btn-option-table btn-eliminar">
+          <i class="uil uil-trash"></i>
+        </button>
+      </td>
+    </tr>
+    }
+  </tbody>
+}
+  <!-- } @if (dataNosotros.length == 0 && isLoading == false) {
+  <tbody class="spinner">
+    <app-mensaje-tabla-vacia [nombrePagina]="nombrePagina" />
+  </tbody>
+  } @if (isLoading) {
+  <tbody class="spinner">
+    <app-loaders-tables-pages />
+  </tbody>
+  } -->
+</table>
+

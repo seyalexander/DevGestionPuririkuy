@@ -1,0 +1,56 @@
+<table class="table table-striped table-inverse table-responsive">
+  <thead class="thead-inverse">
+    <tr>
+      <th>
+        <app-th-table-icon-text [nombreTh]="'N°'" />
+      </th>
+      <th>
+        <app-th-table-icon-text [nombreTh]="'Ventaja 1'" />
+      </th>
+      <th>
+        <app-th-table-icon-text [nombreTh]="'Ventaja 2'" />
+      </th>
+      <th>
+        <app-th-table-icon-text [nombreTh]="'Ventaja 3'" />
+      </th>
+      <th>
+        <app-th-table-icon-text [nombreTh]="'Ventaja 4'" />
+      </th>
+      <th>Editar</th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+
+  @if (!isLoading) {
+  <tbody>
+    @for (item of dataVentajas; track $index) {
+    <tr>
+      <td scope="row">{{ item.ventajasModelid }}</td>
+      <td>{{ item.ventajasModelItemA }}</td>
+      <td>{{ item.ventajasModelItemB }}</td>
+      <td>{{ item.ventajasModelItemC }}</td>
+      <td>{{ item.ventajasModelItemD }}</td>
+      <td>
+        <button class="btn-option-table btn-editar">
+          <i class="uil uil-pen"></i>
+        </button>
+      </td>
+      <td>
+        <button class="btn-option-table btn-eliminar">
+          <i class="uil uil-trash"></i>
+        </button>
+      </td>
+    </tr>
+    }
+  </tbody>
+  } @if (dataVentajas.length == 0 && isLoading == false) {
+  <tbody class="spinner">
+    <app-mensaje-tabla-vacia [nombrePagina]="nombrePagina" />
+  </tbody>
+  } @if (isLoading) {
+  <tbody class="spinner">
+    <app-loaders-tablets-pages/>
+  </tbody>
+  }
+</table>
+

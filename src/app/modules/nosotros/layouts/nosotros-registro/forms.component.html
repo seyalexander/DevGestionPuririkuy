@@ -1,0 +1,71 @@
+<article class="container-registrar">
+  <div class="parte-superior">
+    <h2>REGISTRAR NOSOTROS</h2>
+    <button (click)="cerrarComponente()">
+      <i class="uil uil-multiply"></i>
+    </button>
+  </div>
+  <div class="parte-inferior">
+    <form (ngSubmit)="sendClientes()" [formGroup]="formularioRegistro">
+      <div class="container-grupos">
+        <div class="grupo-inputs">
+          <div class="bg-input">
+            <div class="bg-label">
+              <label for="descripcionRazonSocial">Número*:</label>
+            </div>
+            <input
+              [autofocus]
+              formControlName="ruc"
+              type="text"
+              id="ruc"
+              name="ruc"
+              placeholder="Registrar número"
+              required
+              [(ngModel)]="Nosotros.nosotrosCodInterno"
+            />
+          </div>
+          <div class="bg-input">
+            <div class="bg-label">
+              <label for="descripcionRazonSocial">Titulo*:</label>
+            </div>
+            <input
+              [autofocus]
+              formControlName="ruc"
+              type="text"
+              id="ruc"
+              name="ruc"
+              placeholder="Registrar título"
+              required
+              [(ngModel)]="Nosotros.nosotrostitulo"
+            />
+          </div>
+          <div class="bg-input">
+            <div class="bg-label">
+              <label for="descripcionRazonSocial">Descripción*:</label>
+            </div>
+            <input
+              [autofocus]
+              formControlName="textoDetalle"
+              type="text"
+              id="textoDetalle"
+              name="textoDetalle"
+              placeholder="Registrar Descripción"
+              required
+              [(ngModel)]="Nosotros.textoDetalle"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="opciones-form">
+        <button
+          class="btn btn-success"
+          role="button"
+          [disabled]="!formularioRegistro.valid"
+        >
+          Guardar
+        </button>
+      </div>
+    </form>
+  </div>
+</article>
